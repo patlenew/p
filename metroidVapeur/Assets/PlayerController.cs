@@ -5,11 +5,16 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 
     float speed = 5.0f;
+    float jumpPower = 200f;
     private string findName = "";
+    private bool jumpAble;
+    private Rigidbody2D rid2D;
+
+
 
 	// Use this for initialization
 	void Start () {
-	
+        rid2D = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -20,21 +25,32 @@ public class PlayerController : MonoBehaviour {
 
     private void movePlayer()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * 5, 0);
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        transform.position += move * speed * Time.deltaTime;
+     
 
-
-        if (transform.position.y >= 2.5f)
+        if (Input.GetKeyDown(KeyCode.W) && jumpAble == true)
         {
-            transform.position = new Vector3(transform.position.x, 2.5f, 0);
+
+            jumpAble = false;
+            rid2D.AddForce(Vector2.up * jumpPower);
+            
         }
         else
         {
-            transform.position += move * speed * Time.deltaTime;
+            jumpAble = true;
+            
         }
+    
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if(!col.gameObject)
+        {
+            jumpAble = false;
+        }
+
         if(Main.doorArrEnterRef.Contains(col.gameObject))
         {
             findName = col.gameObject.ToString();
@@ -46,6 +62,17 @@ public class PlayerController : MonoBehaviour {
             findName = col.gameObject.ToString();
             int index = Main.doorArrExitRef.IndexOf(col.gameObject);
             transform.position = new Vector3(Main.doorArrEnterRef[index].transform.position.x - 1.5f, Main.doorArrEnterRef[index].transform.position.y + 1.5f, 0);
+        }
+
+        EventCollision2D(col);
+
+    }
+
+    void EventCollision2D(Collider2D col)
+    {
+        if(EventManager.EventContGet.Contains(col.gameObject))
+        {
+            Debug.Log("wowowow");
         }
     }
 
