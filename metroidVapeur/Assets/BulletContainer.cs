@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BulletContainer : MonoBehaviour {
 
+    public  Vector3 velocityBul;
+
 	// Use this for initialization
 	void Start () {
 	

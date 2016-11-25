@@ -8,39 +8,23 @@ public class PlayerController : MonoBehaviour {
     float jumpPower = 200f;
     private string findName = "";
     private bool jumpAble;
-    private Rigidbody2D rid2D;
+   
 
 
 
 	// Use this for initialization
 	void Start () {
-        rid2D = GetComponent<Rigidbody2D>();
+     
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        movePlayer();
+        
     }
 
     private void movePlayer()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        transform.position += move * speed * Time.deltaTime;
-     
-
-        if (Input.GetKeyDown(KeyCode.W) && jumpAble == true)
-        {
-
-            jumpAble = false;
-            rid2D.AddForce(Vector2.up * jumpPower);
-            
-        }
-        else
-        {
-            jumpAble = true;
-            
-        }
     
     }
 

@@ -22,6 +22,7 @@ GameObject:
   - 212: {fileID: 212000011017291156}
   - 61: {fileID: 61000012803203308}
   - 114: {fileID: 114000011500608722}
+  - 114: {fileID: 114000010055053760}
   m_Layer: 0
   m_Name: bulletPre
   m_TagString: Untagged
@@ -56,6 +57,22 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.17, y: 1.1}
+--- !u!114 &114000010055053760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014274299806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171b7fb393658014ab851c0a43798af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114000011500608722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e7766524afd9f0478706378861a8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocityBul: {x: 0, y: 0, z: 0}
 --- !u!212 &212000011017291156
 SpriteRenderer:
   m_ObjectHideFlags: 1

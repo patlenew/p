@@ -101,7 +101,7 @@ GameObject:
   - 212: {fileID: 74416029}
   - 50: {fileID: 74416028}
   - 61: {fileID: 74416027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - 212: {fileID: 75919682}
   - 50: {fileID: 75919681}
   - 61: {fileID: 75919680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - 212: {fileID: 150996130}
   - 50: {fileID: 150996129}
   - 61: {fileID: 150996128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   - 212: {fileID: 222477919}
   - 50: {fileID: 222477918}
   - 61: {fileID: 222477917}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709d2c32d62d513408396b78bec5ef49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRef: {fileID: 0}
+  playerRef: {fileID: 1931859936}
   playerT: {fileID: 1931859938}
   doorArrEnter:
   - {fileID: 212903762}
@@ -942,7 +942,7 @@ GameObject:
   - 212: {fileID: 549726321}
   - 50: {fileID: 549726323}
   - 61: {fileID: 549726322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   - 212: {fileID: 676823924}
   - 50: {fileID: 676823923}
   - 61: {fileID: 676823922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,7 +1144,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1427,7 +1427,7 @@ GameObject:
   - 212: {fileID: 1381462054}
   - 50: {fileID: 1381462053}
   - 61: {fileID: 1381462052}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,7 +1491,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1522,7 +1522,7 @@ GameObject:
   - 212: {fileID: 1442472599}
   - 50: {fileID: 1442472598}
   - 61: {fileID: 1442472597}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1647,7 +1647,7 @@ GameObject:
   - 212: {fileID: 1504003074}
   - 50: {fileID: 1504003076}
   - 61: {fileID: 1504003075}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1680,7 +1680,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1742,7 +1742,7 @@ GameObject:
   - 212: {fileID: 1780781004}
   - 50: {fileID: 1780781003}
   - 61: {fileID: 1780781002}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1806,7 +1806,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 76850a18f44219e4bb15623198987c0c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1835,12 +1835,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 1931859938}
   - 212: {fileID: 1931859937}
-  - 50: {fileID: 1931859940}
-  - 61: {fileID: 1931859939}
+  - 61: {fileID: 1931859942}
   - 114: {fileID: 1931859941}
-  m_Layer: 0
+  - 114: {fileID: 1931859939}
+  - 114: {fileID: 1931859940}
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1858,7 +1859,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 79b8ac00cb20e464385bd40660823d1c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1885,14 +1886,52 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931859936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.66, y: 1.39, z: 0}
+  m_LocalPosition: {x: -5.66, y: 2.74, z: 0}
   m_LocalScale: {x: 0.7480299, y: 1.7504144, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 86499528}
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!61 &1931859939
+--- !u!114 &1931859939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931859936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a25310d5a45f8954692c60da551e0ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931859940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931859936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc89ba14263d7044aad372bc4afee49c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931859941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931859936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171b7fb393658014ab851c0a43798af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!61 &1931859942
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1906,34 +1945,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.1699998, y: 1.1}
---- !u!50 &1931859940
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1931859936}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1931859941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1931859936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc89ba14263d7044aad372bc4afee49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1960853119
 Prefab:
   m_ObjectHideFlags: 0
