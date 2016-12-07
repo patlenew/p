@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
@@ -11,12 +12,22 @@ public class Player : MonoBehaviour
     float accelerationTimeGrounded = .1f;
     float moveSpeed = 6;
 
+    public float wallSlideSpeedMax = 3;
+
     float gravity;
     float jumpVelocity;
     Vector3 velocity;
     float velocityXSmoothing;
 
+    public Vector2 wallJumpClimb, wallJumpOff, wallLeap;
+    public float wallStickTime = .25f;
+    float timeToWallUnstick;
+
+    public bool moveAxis;
+    bool jumpTrue = false;
+
     Controller2D controller;
+    Vector2 _input;
 
     void Start()
     {
@@ -30,21 +41,118 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+        Vector2 input = _input;
+        int wallDirectionX = (controller.collisions.left) ? -1 : 1;
+        
+        float targetVelocityX = input.x * moveSpeed;
+        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
+
+        bool wallSliding = false;
+
+        if((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0 )
+        {
+            wallSliding = true;
+
+            if(velocity.y  < -wallSlideSpeedMax)
+            {
+                velocity.y = -wallSlideSpeedMax;
+            }
+
+            if(timeToWallUnstick > 0)
+            {
+                velocityXSmoothing = 0;
+                velocity.x = 0;
+
+                if(input.x != wallDirectionX && input.x != 0)
+                {
+                    timeToWallUnstick -= Time.deltaTime;
+
+                }
+                else
+                {
+                    timeToWallUnstick = wallStickTime;
+                }
+                
+            }
+            else
+            {
+                timeToWallUnstick = wallStickTime;
+            }
+        }
+
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0;
         }
 
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+       
 
-        if (Input.GetKeyDown(KeyCode.Space) && controller.collisions.below)
+        if (Input.GetKeyDown(KeyCode.Space)  || jumpTrue)
         {
-            velocity.y = jumpVelocity;
+            if(wallSliding)
+            {
+                if(wallDirectionX == input.x)
+                {
+                    velocity.x = -wallDirectionX * wallJumpClimb.x;
+                    velocity.y = wallJumpClimb.y;
+
+                }
+                else if(input.x == 0)
+                {
+                    velocity.x = -wallDirectionX * wallJumpOff.x;
+                    velocity.y = wallJumpOff.y;
+                }
+                else
+                {
+                    velocity.x = -wallDirectionX * wallLeap.x;
+                    velocity.y = wallLeap.y;
+                }
+            }
+
+            if(controller.collisions.below)
+            {
+                velocity.y = jumpVelocity;
+            }
+
+            
         }
 
-        float targetVelocityX = input.x * moveSpeed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
+        
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
+
+    public void btnFunction(int direction)
+    {
+        
+        if (direction == 2)
+            //_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            
+            _input = new Vector2(1, Input.GetAxisRaw("Vertical"));
+        else if (direction == 1)
+        {
+            _input = new Vector2(-1, Input.GetAxisRaw("Vertical"));
+        }
+        else
+        {
+            _input = new Vector2(0, Input.GetAxisRaw("Vertical"));
+        }
+        
+
+    }
+
+    public void jumpButton(bool jumpEnable)
+    {
+        if(jumpEnable)
+        {
+            jumpTrue = true;
+        }
+        else
+        {
+            jumpEnable = false;
+            jumpTrue = false;
+        }
+    }
+
+    
 }
