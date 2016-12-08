@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     float jumpVelocity;
     Vector3 velocity;
     float velocityXSmoothing;
+    int dir;
 
     public Vector2 wallJumpClimb, wallJumpOff, wallLeap;
     public float wallStickTime = .25f;
@@ -25,6 +26,8 @@ public class Player : MonoBehaviour
 
     public bool moveAxis;
     bool jumpTrue = false;
+    public GameObject armGun;
+   
 
     Controller2D controller;
     Vector2 _input;
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
+        flipCharacter();
 
         Vector2 input = _input;
         int wallDirectionX = (controller.collisions.left) ? -1 : 1;
@@ -122,20 +127,44 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    void flipCharacter()
+    {
+       // _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+       if (Input.GetAxisRaw("Horizontal") < 0 || dir == -1)
+        {
+           gameObject.GetComponent<SpriteRenderer>().flipX = true;
+           armGun.transform.localPosition = new Vector3(-.96f, .15f, 0 );
+            WeaponController.leftGun = true;
+          
+        }
+        else
+        {
+            
+             gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            armGun.transform.localPosition = new Vector3(.96f, .15f, 0);
+            WeaponController.leftGun = false;
+        }
+        
+    }
+
     public void btnFunction(int direction)
     {
-        
-        if (direction == 2)
+
+        if (direction == 2)      
+        {
             //_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            
             _input = new Vector2(1, Input.GetAxisRaw("Vertical"));
+            dir = 1;
+        }    
         else if (direction == 1)
         {
             _input = new Vector2(-1, Input.GetAxisRaw("Vertical"));
+            dir = -1;
         }
         else
         {
             _input = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            dir = 0;
         }
         
 
