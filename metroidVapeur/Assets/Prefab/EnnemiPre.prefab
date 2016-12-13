@@ -21,8 +21,9 @@ GameObject:
   - 4: {fileID: 4000011640849014}
   - 212: {fileID: 212000012998368830}
   - 61: {fileID: 61000012693686048}
-  - 50: {fileID: 50000013080259146}
   - 114: {fileID: 114000011696426902}
+  - 114: {fileID: 114000012286047384}
+  - 114: {fileID: 114000013328203362}
   m_Layer: 0
   m_Name: EnnemiPre
   m_TagString: Untagged
@@ -37,29 +38,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011504375484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.17, y: -0.38, z: 0}
-  m_LocalScale: {x: 1, y: 2.9535196, z: 1}
+  m_LocalPosition: {x: 20.37, y: -1.24, z: 0}
+  m_LocalScale: {x: 1, y: 1.1541806, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &50000013080259146
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011504375484}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &61000012693686048
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -85,6 +69,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb236b33a9acc0840bd9c1390d8de78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  jumpHeight: 4
+  timeToJumpApex: 0.4
+--- !u!114 &114000012286047384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011504375484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171b7fb393658014ab851c0a43798af7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 768
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  collider: {fileID: 0}
+--- !u!114 &114000013328203362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011504375484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607547caaa35e8c44ab2d536e08c1c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveTypes: 0
+  pathPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  currentPath: 0
+  reachDistance: 0.62
 --- !u!212 &212000012998368830
 SpriteRenderer:
   m_ObjectHideFlags: 1

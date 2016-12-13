@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
 
     void flipCharacter()
     {
-       // _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
        if (Input.GetAxisRaw("Horizontal") < 0 || dir == -1)
         {
            gameObject.GetComponent<SpriteRenderer>().flipX = true;
