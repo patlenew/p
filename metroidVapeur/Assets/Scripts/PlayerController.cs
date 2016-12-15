@@ -50,11 +50,7 @@ public class PlayerController : MonoBehaviour {
 
         EventCollision2D(col);
 
-
-        if (col.gameObject.layer == 10)
-        {
-            Debug.Log("sans abris");
-        }
+        
     }
 
     void OnCollisionEnter2D(Collision2D col)

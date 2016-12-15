@@ -6,10 +6,13 @@ public class WeaponController : MonoBehaviour {
     public GameObject bulletCont;
     bool activeGun;
     public static bool leftGun;
+   
+    public AudioSource audioS;
+    public AudioClip tir;
 
 	// Use this for initialization
 	void Start () {
-	
+	  
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,7 @@ public class WeaponController : MonoBehaviour {
 
             Destroy(bul, 1.0f);
             activeGun = false;
+            audioS.PlayOneShot(tir);
         }
 	}
 

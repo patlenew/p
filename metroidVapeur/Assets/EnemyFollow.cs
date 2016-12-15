@@ -11,7 +11,8 @@ public class EnemyFollow : MonoBehaviour {
     float speed = 5.35f;
     Rigidbody2D rigid;
     public GameObject playerRef;
-
+    public GameObject armGunEnemy;
+    public static bool spottedPlayer;
 
 
     // Use this for initialization
@@ -38,23 +39,30 @@ public class EnemyFollow : MonoBehaviour {
 
     void UseTransform()
     {
-        Vector3 dir = pathPoints[currentPath].position - transform.localPosition;
-        Vector3 dirNorm= dir.normalized;
-
-        transform.Translate(dirNorm *(speed*Time.fixedDeltaTime));
-
-        if(dir.magnitude <= reachDistance)
+        if(!spottedPlayer)
         {
-            currentPath++;
-            SpriteRenderer sprit = GetComponent<SpriteRenderer>();
-            
-            sprit.flipX = false;
-            if (currentPath >= pathPoints.Length)
+            Vector3 dir = pathPoints[currentPath].position - transform.localPosition;
+            Vector3 dirNorm = dir.normalized;
+
+            transform.Translate(dirNorm * (speed * Time.fixedDeltaTime));
+
+            if (dir.magnitude <= reachDistance)
             {
-                sprit.flipX = true;
-                currentPath = 0;
+                currentPath++;
+                SpriteRenderer sprit = GetComponent<SpriteRenderer>();
+
+                sprit.flipX = false;
+                armGunEnemy.transform.localPosition = new Vector3(.96f, .15f, 0);
+
+                if (currentPath >= pathPoints.Length)
+                {
+                    sprit.flipX = true;
+                    currentPath = 0;
+                    armGunEnemy.transform.localPosition = new Vector3(-.96f, .15f, 0);
+                }
             }
         }
+        
 
     }
 
@@ -92,6 +100,13 @@ public class EnemyFollow : MonoBehaviour {
                 Gizmos.DrawSphere(pathPoint.position, reachDistance);
             }
         }
+    }
+
+    public void enemyShoot(bool spot)
+    {
+        spottedPlayer = spot;
+       // gameObject.GetComponentInChildren<Transform>().LookAt(refPlayer);
+        
     }
 
     

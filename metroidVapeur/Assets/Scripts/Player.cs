@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
+    public AudioSource audioP;
+    public AudioClip jumpS;
 
     public float jumpHeight = 4;
     public float timeToJumpApex = .4f;
@@ -119,6 +121,7 @@ public class Player : MonoBehaviour
                 velocity.y = jumpVelocity;
             }
 
+            audioP.PlayOneShot(jumpS);
             
         }
 
@@ -133,7 +136,7 @@ public class Player : MonoBehaviour
        if (Input.GetAxisRaw("Horizontal") < 0 || dir == -1)
         {
            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-           armGun.transform.localPosition = new Vector3(-.96f, .15f, 0 );
+           armGun.transform.localPosition = new Vector3(-0.21f, armGun.transform.localPosition.y, 0 );
             WeaponController.leftGun = true;
           
         }
@@ -141,7 +144,7 @@ public class Player : MonoBehaviour
         {
             
              gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            armGun.transform.localPosition = new Vector3(.96f, .15f, 0);
+            armGun.transform.localPosition = new Vector3(Mathf.Abs(armGun.transform.localPosition.x), armGun.transform.localPosition.y, 0);
             WeaponController.leftGun = false;
         }
         

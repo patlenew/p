@@ -36,11 +36,11 @@ public class EnemyManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+       // Vector3 _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         int wallDirectionX = (controller.collisions.left) ? -1 : 1;
 
-        float targetVelocityX = _input.x * moveSpeed;
+        float targetVelocityX = .5f * moveSpeed;
        
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
 
