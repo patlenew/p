@@ -35,6 +35,7 @@ public class EnemyScann : MonoBehaviour {
     IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(2f);
+        WeaponEnemyCont.shootEnableE = true;
         onAttackCooldown = false;
         Debug.Log("it over");
 

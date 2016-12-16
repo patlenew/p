@@ -52,13 +52,13 @@ public class EnemyFollow : MonoBehaviour {
                 SpriteRenderer sprit = GetComponent<SpriteRenderer>();
 
                 sprit.flipX = false;
-                armGunEnemy.transform.localPosition = new Vector3(.96f, .15f, 0);
+                armGunEnemy.transform.localPosition = new Vector3(0.183f, -0.071f, 0);
 
                 if (currentPath >= pathPoints.Length)
                 {
                     sprit.flipX = true;
                     currentPath = 0;
-                    armGunEnemy.transform.localPosition = new Vector3(-.96f, .15f, 0);
+                    armGunEnemy.transform.localPosition = new Vector3(-0.183f, -0.071f, 0);
                 }
             }
         }

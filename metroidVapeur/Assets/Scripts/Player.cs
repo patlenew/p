@@ -102,26 +102,30 @@ public class Player : MonoBehaviour
                 {
                     velocity.x = -wallDirectionX * wallJumpClimb.x;
                     velocity.y = wallJumpClimb.y;
+                    audioP.PlayOneShot(jumpS);
 
                 }
                 else if(input.x == 0)
                 {
                     velocity.x = -wallDirectionX * wallJumpOff.x;
                     velocity.y = wallJumpOff.y;
+                    audioP.PlayOneShot(jumpS);
                 }
                 else
                 {
                     velocity.x = -wallDirectionX * wallLeap.x;
                     velocity.y = wallLeap.y;
+                    audioP.PlayOneShot(jumpS);
                 }
             }
 
             if(controller.collisions.below)
             {
                 velocity.y = jumpVelocity;
+                audioP.PlayOneShot(jumpS);
             }
 
-            audioP.PlayOneShot(jumpS);
+            
             
         }
 
