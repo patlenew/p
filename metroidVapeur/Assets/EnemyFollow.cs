@@ -122,11 +122,19 @@ public class EnemyFollow : MonoBehaviour {
         }
     }
 
-    public void enemyShoot(bool spot)
+	public void SpottedEnemy(bool input)
     {
-        spottedPlayer = spot;
-       // gameObject.GetComponentInChildren<Transform>().LookAt(refPlayer);
-        
+		if (!spottedPlayer && input) {  //unspotted a spotted
+			spottedPlayer = true;
+			Debug.Log ("spotted");
+			//SPOTTED ICI
+		} 
+		else if (!input == spottedPlayer)
+		{
+
+			spottedPlayer = false;
+			Debug.Log ("unspotted");
+		}
     }
 
     

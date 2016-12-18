@@ -21,20 +21,22 @@ public class EnemyScann : MonoBehaviour {
 
         absPos = Mathf.Abs(playerT.transform.position.x - transform.position.x);
 
-        if(absPos < 8)
+        if(absPos < 12)
         {
             attackMode = true;
             if(!onAttackCooldown)
             {
                 onAttackCooldown = true;
 				Shoot ();
-				Follow.spottedPlayer=true;
+				Follow.SpottedEnemy(true);
                 StartCoroutine(DelayAttack());
             }
         }
         else
         {
             attackMode = false;
+			Follow.SpottedEnemy(false);
+
         }
 	
 	}
