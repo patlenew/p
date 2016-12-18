@@ -56,7 +56,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.17, y: 1.1}
+  m_Size: {x: 1, y: 1}
 --- !u!114 &114000010055053760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityBul: {x: 0, y: 0, z: 0}
+  isEnemyBullet: 0
 --- !u!212 &212000011017291156
 SpriteRenderer:
   m_ObjectHideFlags: 1

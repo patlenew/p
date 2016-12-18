@@ -6,9 +6,14 @@ public class EnemyScann : MonoBehaviour {
     public Transform playerT;
     bool attackMode, onAttackCooldown;
     float absPos;
+	SpriteRenderer sprit;
+	EnemyFollow Follow;
+
+	public GameObject bulletE;
 	// Use this for initialization
 	void Start () {
-	
+		sprit = GetComponent<SpriteRenderer>();
+		Follow = GetComponent<EnemyFollow>();
 	}
 	
 	// Update is called once per frame
@@ -16,12 +21,14 @@ public class EnemyScann : MonoBehaviour {
 
         absPos = Mathf.Abs(playerT.transform.position.x - transform.position.x);
 
-        if(absPos < 14)
+        if(absPos < 8)
         {
             attackMode = true;
             if(!onAttackCooldown)
             {
                 onAttackCooldown = true;
+				Shoot ();
+				Follow.spottedPlayer=true;
                 StartCoroutine(DelayAttack());
             }
         }
@@ -35,9 +42,22 @@ public class EnemyScann : MonoBehaviour {
     IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(2f);
-        WeaponEnemyCont.shootEnableE = true;
         onAttackCooldown = false;
-        Debug.Log("it over");
 
     }
+	void Shoot()
+	{
+		Debug.Log ("spotted");
+
+		GameObject bul = Instantiate(bulletE, transform.GetChild(0).position, Quaternion.identity) as GameObject;
+		bul.AddComponent<Rigidbody2D>();
+		if(!sprit.flipX)
+			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500f);
+		else
+			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500f);
+
+		bul.GetComponent<BulletContainer> ().isEnemyBullet = true;
+
+		Destroy(bul, 1.0f);
+	}
 }

@@ -33,7 +33,7 @@ public class EnemyManager : MonoBehaviour {
 
         
 	}
-	
+	/*
 	// Update is called once per frame
 	void Update () {
        // Vector3 _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -52,7 +52,7 @@ public class EnemyManager : MonoBehaviour {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-    
+    */
     void OnCollisionEnter2D(Collision2D col)
     {
         onFollowPlayer();
