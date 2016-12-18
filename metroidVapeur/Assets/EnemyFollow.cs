@@ -28,7 +28,7 @@ public class EnemyFollow : MonoBehaviour {
         switch(moveTypes)
         {
             case moveType.UseTransform:
-
+                
                 UseTransform();
                 break;
             case moveType.UsePhysics:
@@ -46,8 +46,9 @@ public class EnemyFollow : MonoBehaviour {
 			Vector3 dirNorm = dir.normalized;
 
 			transform.Translate (dirNorm * (speed * Time.fixedDeltaTime));
+      
 
-			if (dir.magnitude <= reachDistance) {
+            if (dir.magnitude <= reachDistance) {
 				currentPath++;
 
 				sprit.flipX = false;
@@ -59,7 +60,7 @@ public class EnemyFollow : MonoBehaviour {
 					armGunEnemy.transform.localPosition = new Vector3 (-0.183f, -0.071f, 0);
 				}
 			}
-		}//When Spotted
+		}
 		else
 		{
 			ChargePlayer ();
@@ -88,22 +89,7 @@ public class EnemyFollow : MonoBehaviour {
 	}
     void UsePhysics()
     {
-        Vector3 dir = pathPoints[currentPath].position - transform.position;
-        Vector3 dirNorm = dir.normalized;
-
-        rigid = GetComponent<Rigidbody2D>();
-
-        rigid.velocity += new Vector2(dirNorm.x * (speed * Time.fixedDeltaTime),rigid.velocity.y);
-
-        if (dir.magnitude <= reachDistance)
-        {
-            Debug.Log("aaa");
-            currentPath++;
-            if (currentPath >= pathPoints.Length)
-            {
-                currentPath = 0;
-            }
-        }
+       
     }
 
     void OnDrawGizmos()

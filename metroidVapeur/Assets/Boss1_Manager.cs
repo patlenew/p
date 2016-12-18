@@ -64,7 +64,7 @@ public class Boss1_Manager : MonoBehaviour {
 
 		Vector2 AimPosition = playerT.position - transform.position;
 		AimPosition = AimPosition.normalized;
-		bul.GetComponent<Rigidbody2D>().AddForce(AimPosition * 5000f);
+		bul.GetComponent<Rigidbody2D>().AddForce(AimPosition * 4000f);
 
 		bul.GetComponent<BulletContainer> ().isEnemyBullet = true;
 		//bul.transform.LookAt (playerT);
@@ -73,7 +73,7 @@ public class Boss1_Manager : MonoBehaviour {
 	}
 	IEnumerator DelayAttack()
 	{
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(1f);
 		onAttackCooldown = false;
 
 	}

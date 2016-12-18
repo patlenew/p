@@ -36,14 +36,14 @@ public class EnemyScann : MonoBehaviour {
         {
             attackMode = false;
 			Follow.SpottedEnemy(false);
-
+           
         }
 	
 	}
 
     IEnumerator DelayAttack()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         onAttackCooldown = false;
 
     }
@@ -54,9 +54,9 @@ public class EnemyScann : MonoBehaviour {
 		GameObject bul = Instantiate(bulletE, transform.GetChild(0).position, Quaternion.identity) as GameObject;
 		bul.AddComponent<Rigidbody2D>();
 		if(!sprit.flipX)
-			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500f);
+			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 5000f);
 		else
-			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500f);
+			bul.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 5000f);
 
 		bul.GetComponent<BulletContainer> ().isEnemyBullet = true;
 

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     float jumpPower = 200f;
     private string findName = "";
     private bool jumpAble;
-   
+    public GameObject playerLifeP;
 
 
 

@@ -137,14 +137,14 @@ public class Player : MonoBehaviour
     void flipCharacter()
     {
         _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-       if (Input.GetAxisRaw("Horizontal") < 0)
+       if (Input.GetAxisRaw("Horizontal") < 0 || dir == -1)
         {
            gameObject.GetComponent<SpriteRenderer>().flipX = true;
            armGun.transform.localPosition = new Vector3(-0.21f, armGun.transform.localPosition.y, 0 );
             WeaponController.leftGun = true;
           
         }
-		else if(Input.GetAxisRaw("Horizontal") > 0)
+		else if(Input.GetAxisRaw("Horizontal") > 0 || dir == 1)
         {
             
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
