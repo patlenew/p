@@ -19,6 +19,10 @@ public class EnemyScann : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if(playerT != null)
+        {
+
+        
         absPos = Mathf.Abs(playerT.transform.position.x - transform.position.x);
 
         if(absPos < 12)
@@ -38,8 +42,8 @@ public class EnemyScann : MonoBehaviour {
 			Follow.SpottedEnemy(false);
            
         }
-	
-	}
+        }
+    }
 
     IEnumerator DelayAttack()
     {

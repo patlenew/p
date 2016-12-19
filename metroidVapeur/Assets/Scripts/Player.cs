@@ -32,13 +32,14 @@ public class Player : MonoBehaviour
    
 
     Controller2D controller;
-	Animator animator;
+    Animator animator;
     Vector2 _input;
 
     void Start()
     {
         controller = GetComponent<Controller2D>();
 		animator = GetComponent<Animator> ();
+       
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         print("Gravity: " + gravity + "  Jump Velocity: " + jumpVelocity);
@@ -140,22 +141,28 @@ public class Player : MonoBehaviour
         _input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		if (Input.GetAxisRaw ("Horizontal") < 0 || dir == -1) {
 			gameObject.GetComponent<SpriteRenderer> ().flipX = true;
-			armGun.transform.localPosition = new Vector3 (-0.21f, armGun.transform.localPosition.y, 0);
+            armGun.GetComponent<SpriteRenderer>().flipX = true;
+			armGun.transform.localPosition = new Vector3 (-0.143f, armGun.transform.localPosition.y, 0);
 			animator.SetBool ("isRunning", true);
-			WeaponController.leftGun = true;
+            
+            WeaponController.leftGun = true;
           
 		} else if (Input.GetAxisRaw ("Horizontal") > 0 || dir == 1) {
             
 			gameObject.GetComponent<SpriteRenderer> ().flipX = false;
-			armGun.transform.localPosition = new Vector3 (Mathf.Abs (armGun.transform.localPosition.x), armGun.transform.localPosition.y, 0);
+            armGun.GetComponent<SpriteRenderer>().flipX = false;
+            armGun.transform.localPosition = new Vector3 (Mathf.Abs (armGun.transform.localPosition.x), armGun.transform.localPosition.y, 0);
 			WeaponController.leftGun = false;
 			animator.SetBool ("isRunning", true);
+            
 
-		} 
+        } 
 		else 
 		{
 			animator.Play ("animIdlePlayer");
+           
 			animator.SetBool ("isRunning", false);
+         
 		}
     }
 
@@ -164,7 +171,7 @@ public class Player : MonoBehaviour
 
         if (direction == 2)      
         {
-            //_input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+           
             _input = new Vector2(1, Input.GetAxisRaw("Vertical"));
             dir = 1;
         }    

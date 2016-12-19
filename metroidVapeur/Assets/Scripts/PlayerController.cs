@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     float jumpPower = 200f;
     private string findName = "";
     private bool jumpAble;
-    public GameObject playerLifeP;
+    public GameObject playerLifeP, bossLife, boss;
 
 
 
@@ -60,10 +60,19 @@ public class PlayerController : MonoBehaviour {
 
     void EventCollision2D(Collider2D col)
     {
-        if(EventManager.EventContGet.Contains(col.gameObject))
+        if (col.gameObject.name == "Event2")
         {
-            Debug.Log("wowowow");
+
+            bossLife.SetActive(true);
+            boss.SetActive(true);
+            EventManager.EventContGet.Remove(col.gameObject);
+            
         }
+        if (EventManager.EventContGet.Contains(col.gameObject))
+        {
+         
+        }
+        
     }
 
     private bool isName(string name)

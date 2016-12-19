@@ -15,6 +15,7 @@ public class Boss1_Manager : MonoBehaviour {
 	bool attackMode, onAttackCooldown;
 	float absPos;
 	public GameObject bulletE;
+    public GameObject bossVie;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,10 @@ public class Boss1_Manager : MonoBehaviour {
 	}
 	void ScanAttack()
 	{
+        if(playerT != null)
+        {
 
+       
 		absPos = Mathf.Abs(playerT.transform.position.x - transform.position.x);
 
 		if(absPos < 12)
@@ -54,8 +58,9 @@ public class Boss1_Manager : MonoBehaviour {
 		{
 			attackMode = false;
 		}
+        }
 
-	}
+    }
 	void Shoot()
 	{
 
@@ -73,7 +78,7 @@ public class Boss1_Manager : MonoBehaviour {
 	}
 	IEnumerator DelayAttack()
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(2f);
 		onAttackCooldown = false;
 
 	}

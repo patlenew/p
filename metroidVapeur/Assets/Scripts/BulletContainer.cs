@@ -6,10 +6,11 @@ public class BulletContainer : MonoBehaviour {
 
     public  Vector3 velocityBul;
 	public bool isEnemyBullet;
-           GameObject playerLife;
+           GameObject playerLife, bossLif;
+           Main getStuff;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -27,30 +28,52 @@ public class BulletContainer : MonoBehaviour {
         }
         else if (isEnemyBullet && col.gameObject.name == "Player")
         {
-        
+
+
             playerLife = col.gameObject.GetComponent<PlayerController>().playerLifeP;
             playerLife.transform.localScale = new Vector3(playerLife.transform.localScale.x - .15f, playerLife.transform.localScale.y);
-            
 
             if (playerLife.transform.localScale.x <= 0)
             {
-                Debug.Log("sssss");
+
+                Camera.main.GetComponent<Main>().receiveWin(false);
+
                 playerLife.transform.localScale = new Vector3(0, playerLife.transform.localScale.y);
-                SceneManager.LoadScene(0);
+                Destroy(col.gameObject);
+
             }
+            else
             Destroy(this);
+
+            
+      
         }
         else if (isEnemyBullet && col.gameObject.name == "EnnemiPre")
         {
-            Debug.Log("jme tire la face lgros");
+      
             Destroy(this);
 
         }
         else if (!isEnemyBullet && col.gameObject.name == "mrBoss")
         {
-            Debug.Log("ses le boss");
+            bossLif = col.gameObject.GetComponent<Boss1_Manager>().bossVie;
+            bossLif.transform.localScale = new Vector3(bossLif.transform.localScale.x - .15f, bossLif.transform.localScale.y);
+            if (bossLif.transform.localScale.x <= 0)
+            {
+                Camera.main.GetComponent<Main>() .receiveWin(true);
+                
+                bossLif.transform.localScale = new Vector3(0, bossLif.transform.localScale.y);
+                Destroy(col.gameObject);
+            }
+            else
+            Destroy(this);
+
+            
+          
         }
 
 			
     }
+
+   
 }

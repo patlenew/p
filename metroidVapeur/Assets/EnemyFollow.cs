@@ -52,17 +52,20 @@ public class EnemyFollow : MonoBehaviour {
 				currentPath++;
 
 				sprit.flipX = false;
-				armGunEnemy.transform.localPosition = new Vector3 (0.183f, -0.071f, 0);
+                armGunEnemy.GetComponent<SpriteRenderer>().flipX = false;
+				armGunEnemy.transform.localPosition = new Vector3 (0.082f, -0.071f, 0);
 
 				if (currentPath >= pathPoints.Length) {
 					sprit.flipX = true;
-					currentPath = 0;
-					armGunEnemy.transform.localPosition = new Vector3 (-0.183f, -0.071f, 0);
+                    armGunEnemy.GetComponent<SpriteRenderer>().flipX = true;
+                    currentPath = 0;
+					armGunEnemy.transform.localPosition = new Vector3 (-0.082f, -0.071f, 0);
 				}
 			}
 		}
 		else
 		{
+            if(Scan.playerT != null)
 			ChargePlayer ();
 		}
 
@@ -73,15 +76,17 @@ public class EnemyFollow : MonoBehaviour {
 		if (transform.position.x > Scan.playerT.position.x)
 		{
 			sprit.flipX = true;
-			dirNorm = Vector2.left;
-			armGunEnemy.transform.localPosition = new Vector3 (-0.183f, -0.071f, 0);
+            armGunEnemy.GetComponent<SpriteRenderer>().flipX = true;
+            dirNorm = Vector2.left;
+			armGunEnemy.transform.localPosition = new Vector3 (-0.082f, -0.071f, 0);
 		} 
 		else
 		{
 			sprit.flipX = false;
-			dirNorm = Vector2.right;
+            armGunEnemy.GetComponent<SpriteRenderer>().flipX = false;
+            dirNorm = Vector2.right;
 
-			armGunEnemy.transform.localPosition = new Vector3 (0.183f, -0.071f, 0);
+			armGunEnemy.transform.localPosition = new Vector3 (0.082f, -0.071f, 0);
 
 		}
 
@@ -112,14 +117,14 @@ public class EnemyFollow : MonoBehaviour {
     {
 		if (!spottedPlayer && input) {  //unspotted a spotted
 			spottedPlayer = true;
-			Debug.Log ("spotted");
+		
 			//SPOTTED ICI
 		} 
 		else if (!input == spottedPlayer)
 		{
 
 			spottedPlayer = false;
-			Debug.Log ("unspotted");
+			
 		}
     }
 
